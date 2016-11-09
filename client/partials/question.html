@@ -1,0 +1,25 @@
+<div ng-controller="quesCtrl as QC">
+	
+	<p>
+		<a href="#/home">Home</a>
+		<a href="" ng-click="QC.logout()">Logout</a>
+	</p>
+	<h2>New Question</h2>
+	<form ng-submit="QC.addQuestion()">
+		<p>Question: 
+			<textarea rows='3' cols='50' ng-model="QC.newQ.ques">
+			</textarea>
+		</p>
+
+		<p>Description (optional): 
+			<textarea rows='3' cols='50' ng-model="QC.newQ.description">
+			</textarea>
+		</p>
+
+		<p>
+		<button><a href="#/home">Cancel</a></button>
+		<input type="submit" value="Submit">
+		</p>
+	</form>
+
+</div>

@@ -1,0 +1,27 @@
+<div ng-controller="quesCtrl as QC">
+	
+	<h2>Hi {{ QC.user.name }}</h2>
+	<p>
+		<a href="#/question">Add a Question</a>
+		<a href="" ng-click="QC.logout()">Logout</a>
+	</p>
+
+	<h4>Search: <input type="text" ng-model="search.ques"></h4>
+
+	<table>
+		<tr>
+			<th>Question</th>
+			<th>Answers</th>
+			<th>Action</th>
+		</tr>	
+		<tr ng-repeat="ques in QC.allQues | filter:search:strict">
+			<td>{{ ques.ques }}</td>
+			<td>{{ ques.ans_count }}</td>
+			<td>
+				<a href="#/question/{{ques._id}}">Show</a>
+				<a href="#/answer/{{ques._id}}">Answer</a>
+			</td>
+		</tr>
+	</table>
+
+</div>

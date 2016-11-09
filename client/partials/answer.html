@@ -1,0 +1,29 @@
+<div ng-controller="ansCtrl as AC">
+
+	<p>
+		<a href="#/home">Home</a> | 
+		<a href="#/question/{{AC.question._id}}">Go back to Question</a>
+		<a href="" ng-click="AC.logout()">Logout</a>
+	</p>
+	
+	<h3>{{ AC.question.ques }}</h3>
+	<h4>{{ AC.question.description }}</h4>
+
+	<form ng-submit="AC.addAnswer(AC.question._id)">
+		<p>Your Answer: 
+			<textarea rows='3' cols='50' ng-model="AC.newA.ans">
+			</textarea>
+		</p>
+
+		<p>Supporting Details (optional): 
+			<textarea rows='3' cols='50' ng-model="AC.newA.detail">
+			</textarea>
+		</p>
+
+		<p>
+		<button><a href="#/home">Cancel</a></button>
+		<input type="submit" value="Submit">
+		</p>
+	</form>
+
+</div>

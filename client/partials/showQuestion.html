@@ -1,0 +1,21 @@
+<div ng-controller="ansCtrl as AC">
+
+	<p>
+		<a href="#/home">Home</a> | 
+		<a href="#/answer/{{AC.question._id}}">Answer this Question</a>
+		<a href="" ng-click="AC.logout()">Logout</a>
+	</p>
+
+	<h3>{{ AC.question._user}} - {{ AC.question.ques }}</h3>
+	<h4>{{ AC.question.description }}</h4>
+
+	<div ng-repeat="ans in AC.allAnswers">
+		<p>{{ ans._user }}:</p>
+		<p>
+			<b>{{ ans.ans }}</b>
+			{{ ans.likes }} likes <button ng-click="AC.addLike(ans._id)">Like</button>
+		</p>
+		<p>{{ ans.detail }}</p>
+	</div>
+
+</div>
